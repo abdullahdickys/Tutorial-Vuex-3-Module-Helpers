@@ -15,5 +15,5 @@ Kadang kita mengenal lelucon, “<strong><em>Ketika codingan yang kita buat, han
 <pre class=" language-javascript"><code class="prism  language-javascript">npm install vuex <span class="token operator">--</span>save
 </code></pre>
 <p>Kita akan membuat 3 buah  <em>component</em>, yakni:  <strong>Donatur.vue</strong>  (untuk meng-<em>handle list</em>  donatur),  <strong>Clients.Vue</strong>  (untuk meng-<em>handle</em>  jenis bantuan) dan  <strong>Transaksi.vue</strong>  (untuk mencatat transaksi donasi yang telah dilakukan). Adapun hasil yang akan kita capai adalah sebagai berikut:<br>
-<img src="https://drive.google.com/file/d/1A0DlMlgpjDIIzdhIx573tthlgrXc3Yx3/view?usp=sharing" alt="enter image description here"></p>
+<a href="https://drive.google.com/file/d/1A0DlMlgpjDIIzdhIx573tthlgrXc3Yx3/view?usp=sharing">https://drive.google.com/file/d/1A0DlMlgpjDIIzdhIx573tthlgrXc3Yx3/view?usp=sharing</a></p>
 
