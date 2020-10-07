@@ -33,11 +33,9 @@ Kadang kita mengenal lelucon, “<strong><em>Ketika codingan yang kita buat, han
 <h2 id="tahap-persiapan">Tahap Persiapan</h2>
 <p>Meskipun artikel ini merupakan lanjutan dari seri sebelumnya, tapi kita akan memulainya dengan  <em>case</em>  yang berbeda, yakni:  <strong><em>membuat aplikasi donasi</em></strong>. Buat  <em>project fresh install</em>  terlebih dahulu:</p>
 <pre class=" language-javascript"><code class="prism  language-javascript">vue create donasi
-
 </code></pre>
 <p>Kemudian  <em>install library</em>  Vuex</p>
 <pre class=" language-javascript"><code class="prism  language-javascript">npm install vuex <span class="token operator">--</span>save
-
 </code></pre>
 <p>Kita akan membuat 3 buah  <em>component</em>, yakni:  <strong>Donatur.vue</strong>  (untuk meng-<em>handle list</em>  donatur),  <strong>Clients.Vue</strong>  (untuk meng-<em>handle</em>  jenis bantuan) dan  <strong>Transaksi.vue</strong>  (untuk mencatat transaksi donasi yang telah dilakukan). Adapun hasil yang akan kita capai adalah sebagai berikut:</p>
 <p>![](file:///home/nuge/Documents/Tutorial%20Vuex%20%233:%20Module%20&amp;%20Helpers/vuex%20module%20-%20view.png)<img src="https://daengweb.id/uploads/galeri/1/Vuejs/vuex_module_-_view-optimize.png" alt="Cara membuat modules vuex"></p>
