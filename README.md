@@ -58,7 +58,9 @@ Kadang kita mengenal lelucon, “<strong><em>Ketika codingan yang kita buat, han
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
     <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
         computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token comment">//MEMBUAT COMPUTED PROPERTY DENGAN NAMA listDonatur()</span>
             <span class="token function">listDonatur</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">//DATA DIAMBIL DARI STATE MODULE donatur</span>
                 <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>donatur<span class="token punctuation">.</span>listDonatur
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
@@ -107,7 +109,6 @@ Kadang kita mengenal lelucon, “<strong><em>Ketika codingan yang kita buat, han
                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">&gt;</span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">&gt;</span></span>
-                //
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">&gt;</span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -115,7 +116,7 @@ Kadang kita mengenal lelucon, “<strong><em>Ketika codingan yang kita buat, han
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
     <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
         computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            <span class="token comment">//</span>
+	          <span class="token comment">//</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
@@ -183,17 +184,23 @@ Kadang kita mengenal lelucon, “<strong><em>Ketika codingan yang kita buat, han
 		<span class="token punctuation">}</span><span class="token punctuation">,</span>
 		computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
 			<span class="token function">isLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">//MENGAMBIL STATE DARI ROOT VUEX (store.js)</span>
+                <span class="token comment">//JADI, SETELAH .state. LANGSUNG MENYEBUTKAN NAMA STATENYA</span>
+                <span class="token comment">//KARENA TIDAK MASUK KEDALAM MODULE</span>
 				<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>isLoading
 			<span class="token punctuation">}</span>
 		<span class="token punctuation">}</span><span class="token punctuation">,</span>
 		methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token comment">//HANDLE EMIT DARI COMPONENT DONATUR</span>
 			<span class="token function">selectedDonatur</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 				<span class="token keyword">this</span><span class="token punctuation">.</span>donatur <span class="token operator">=</span> val
 			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token comment">//HANDLE EMIT DARI COMPONENT CLIENTS</span>
 			<span class="token function">selectedBantuan</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 				<span class="token keyword">this</span><span class="token punctuation">.</span>clients <span class="token operator">=</span> val
 			<span class="token punctuation">}</span><span class="token punctuation">,</span>
 			<span class="token function">submitDonasi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token comment">//AKAN KITA MODIFIKASI SELANJUTNYA</span>
 			<span class="token punctuation">}</span>
 		<span class="token punctuation">}</span><span class="token punctuation">,</span>
 		components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
@@ -217,6 +224,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
         isLoading<span class="token punctuation">:</span> <span class="token boolean">false</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     modules<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// MODULE AKAN DITEMPATKAN DISINI</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
@@ -224,13 +232,13 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <p>Terakhir buka  <em>file</em>  <code>main.js</code>, kemudian modifikasi menjadi:</p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
 <span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App.vue'</span>
-<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'./store'</span> 
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'./store'</span> <span class="token comment">//IMPORT STORE.JS</span>
 
 Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
 
 <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   render<span class="token punctuation">:</span> h <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">,</span>
-  store 
+  store <span class="token comment">// USE store</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
 
 
@@ -251,8 +259,10 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
         <span class="token punctuation">]</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     mutations<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// NONE</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     actions<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// NONE</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
@@ -272,8 +282,10 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
         <span class="token punctuation">]</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     mutations<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// NONE</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     actions<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// NONE</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
@@ -285,6 +297,8 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">const</span> transaksi <span class="token operator">=</span> <span class="token punctuation">{</span>
     namespaced<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     state<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">//DEFAULT DATA TRANSAKSI YANG AKAN DITAMPILKAN</span>
+        <span class="token comment">//PADA COMPONENT TRANSAKSI.VUE</span>
         listTransaksi<span class="token punctuation">:</span> <span class="token punctuation">[</span>
             <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token string">'TRX1P1'</span><span class="token punctuation">,</span> donatur<span class="token punctuation">:</span> <span class="token string">'Anugrah Sandi'</span><span class="token punctuation">,</span> bantuan<span class="token punctuation">:</span> <span class="token string">'Gempa Lombok'</span><span class="token punctuation">,</span> jumlah<span class="token punctuation">:</span> <span class="token number">100000</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
             <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token string">'TRX1P2'</span><span class="token punctuation">,</span> donatur<span class="token punctuation">:</span> <span class="token string">'Dharma'</span><span class="token punctuation">,</span> bantuan<span class="token punctuation">:</span> <span class="token string">'Banjir Bandang'</span><span class="token punctuation">,</span> jumlah<span class="token punctuation">:</span> <span class="token number">250000</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -292,15 +306,21 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
         <span class="token punctuation">]</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     mutations<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">//MENGUBAH STATE DENGAN</span>
         ADD_DONASI<span class="token punctuation">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> payload<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token comment">//MENAMBAHKAN DATA BARU KEDALAM ARRAY MENGGUNAKAN PUSH()</span>
             state<span class="token punctuation">.</span>listTransaksi<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     actions<span class="token punctuation">:</span> <span class="token punctuation">{</span>
         <span class="token function">save_donasi</span><span class="token punctuation">(</span><span class="token punctuation">{</span> commit<span class="token punctuation">,</span> rootState <span class="token punctuation">}</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            rootState<span class="token punctuation">.</span>isLoading <span class="token operator">=</span> <span class="token boolean">true</span> 
+            <span class="token comment">// rootState BERARTI MENGAKSES STATE YANG TIDAK BERADA DALAM MODULES</span>
+            <span class="token comment">// DALAM HAL INI STATE isLoading YANG ADA DI DALAM FILE store.js</span>
+            rootState<span class="token punctuation">.</span>isLoading <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment">//SET TRUE UNTUK MEMBERIKAN EFEK LOADING</span>
             <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token comment">//MENGINSTRUKSIKAN PADA MUTATIONS TERKAIT UNTUK MENJALANKAN INSTRUKSINYA</span>
                 <span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'ADD_DONASI'</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span>
+                <span class="token comment">// STATE isLoading DI MATIKAN KEMBALI</span>
                 rootState<span class="token punctuation">.</span>isLoading <span class="token operator">=</span> <span class="token boolean">false</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
         <span class="token punctuation">}</span>
@@ -313,6 +333,7 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
 <p>Agar ketiga  <em>modules</em>  tersebut dapat digunakan, maka kita harus mendefinisikannya pada  <em>root</em>  Vuex, dalam hal ini  <em>file</em>  <code>store.js</code>, buka  <em>file</em>  tersebut kemudian modifikasi menjadi:</p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
 <span class="token keyword">import</span> Vuex <span class="token keyword">from</span> <span class="token string">'vuex'</span>
+<span class="token comment">//IMPORT KETIGA MODULES</span>
 <span class="token keyword">import</span> donatur <span class="token keyword">from</span> <span class="token string">'./modules/donatur'</span>
 <span class="token keyword">import</span> clients <span class="token keyword">from</span> <span class="token string">'./modules/clients'</span>
 <span class="token keyword">import</span> transaksi <span class="token keyword">from</span> <span class="token string">'./modules/transaksi'</span>
@@ -324,6 +345,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
         isLoading<span class="token punctuation">:</span> <span class="token boolean">false</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     modules<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">//DEFINISIKAN KETIGA MODULE TERSEBUT</span>
         donatur<span class="token punctuation">,</span>
         clients<span class="token punctuation">,</span>
         transaksi
@@ -333,8 +355,12 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 </code></pre>
 <p>Pada  <em>form input</em>  donasi kita memiliki sebuah tombol yang memicu  <em>methods</em>  <code>submitDonasi()</code>  ketika di-klik. Dimana  <em>methods</em>  tersebut masih kita biarkan kosong pada sub topik sebelumnya.  <em>So</em>, buka  <em>file</em>  <code>App.vue</code>  kemudian modifikasi  <em>methods</em>  tersebut menjadi:</p>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token function">submitDonasi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   namamodule<span class="token operator">/</span>namafungsi
+    <span class="token comment">// dispatch BERARTI MEMANGGIL FUNGSI YANG ADA DI ACTION</span>
+    <span class="token comment">// DIMANA FUNGSI TERSEBUT BERNAMA save_donasi</span>
+    <span class="token comment">// DAN BERADA DIDALAM MODULE transaksi</span>
+    <span class="token comment">// JADI CARA MEMANGGILNYA ADALAH namamodule/namafungsi</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'transaksi/save_donasi'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token comment">//MENGIRIM 4 BUAH PARAMETER YANG AKAN DIPUSH KEDALAM LISTS ARRAY listTransaksi</span>
         id<span class="token punctuation">:</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">36</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         donatur<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>donatur<span class="token punctuation">,</span>
         bantuan<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>clients<span class="token punctuation">,</span>
@@ -370,10 +396,12 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
-    <span class="token keyword">import</span> <span class="token punctuation">{</span> mapState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span> 
+    <span class="token keyword">import</span> <span class="token punctuation">{</span> mapState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span> <span class="token comment">//IMPORT mapState</span>
     <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
         computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token comment">//MENGGUNAKAN HELPER mapState UNTUK MEMANGGIL MODULE transaksi</span>
             <span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token string">'transaksi'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+                <span class="token comment">// DIMANA DATA YANG AKAN DIAMBIL ADALAH STATE listTransaksi</span>
                 listTransaksi<span class="token punctuation">:</span> state <span class="token operator">=&gt;</span> state<span class="token punctuation">.</span>listTransaksi
             <span class="token punctuation">}</span><span class="token punctuation">)</span>
         <span class="token punctuation">}</span>
@@ -384,13 +412,12 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <p>Sampai pada tahap ini, aplikasi yang kita inginkan sudah berjalan sebagaimana mestinya. Jalankan  <em>command</em>  <code>npm run serve</code>.</p>
 <p>Sebagai tambahan karena tidak sempat digunakan pada codingan diatas, maka untuk penggunaan  <em>helpers</em>  <code>mapActions</code>  dapat kamu lakukan dengan cara:</p>
 <pre class=" language-javascript"><code class="prism  language-javascript">methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token string">'namamodule'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'namafungsi'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
-    <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'namafungsi'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token string">'namamodule'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'namafungsi'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">//HELPERS ACTIONS YANG BERADA DALAM MODULE</span>
+    <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'namafungsi'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">//HELPERS ACTION YANG TIDAK BERADA DALAM MODULE</span>
     <span class="token function">simpan</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">namafungsi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">namafungsi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//CARA MENGGUNAKAN ACTIONS YANG SUDAH DIPANGGIL MELALUI HELPERS</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-
 </code></pre>
 
     </div>
