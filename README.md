@@ -173,7 +173,6 @@ Kadang kita mengenal lelucon, “<strong><em>Ketika codingan yang kita buat, han
 	<span class="token keyword">import</span> Donatur <span class="token keyword">from</span> <span class="token string">'./components/Donatur.vue'</span>
 	<span class="token keyword">import</span> Clients <span class="token keyword">from</span> <span class="token string">'./components/Clients.vue'</span>
 	<span class="token keyword">import</span> Transaksi <span class="token keyword">from</span> <span class="token string">'./components/Transaksi.vue'</span>
-
 	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
 		<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 			<span class="token keyword">return</span> <span class="token punctuation">{</span>
