@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html>
+---
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>README</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
-</head>
 
-<body class="stackedit">
-  <div class="stackedit__left">
-    <div class="stackedit__toc">
-      
-<ul>
-<li>
-<ul>
-<li><a href="#tutorial-vuex-3-module--helpers">Tutorial Vuex #3: Module & Helpers</a></li>
-<li><a href="#tahap-persiapan">Tahap Persiapan</a></li>
-<li><a href="#membuat-module-vuex--menggunakan-helpers">Membuat Module Vuex & Menggunakan Helpers</a></li>
-</ul>
-</li>
-</ul>
+---
 
-    </div>
-  </div>
-  <div class="stackedit__right">
-    <div class="stackedit__html">
-      <h2 id="tutorial-vuex-3-module--helpers">Tutorial Vuex #3: Module &amp; Helpers</h2>
+<h2 id="tutorial-vuex-3-module--helpers">Tutorial Vuex #3: Module &amp; Helpers</h2>
 <p><em><strong>Kesimpulan</strong></em><br>
 <img src="https://vuex.vuejs.org/vuex.png" alt="enter image description here"><br>
 Kadang kita mengenal lelucon, “<strong><em>Ketika codingan yang kita buat, hanya kita dan dan Tuhan yang tahu. Dan setelah beberapa saat, hanya Tuhan saja yang tahu</em></strong>.”.</p>
@@ -115,7 +92,7 @@ Kadang kita mengenal lelucon, “<strong><em>Ketika codingan yang kita buat, han
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
     <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
         computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            
+            <span class="token comment">//</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
@@ -394,8 +371,3 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 
 </code></pre>
 
-    </div>
-  </div>
-</body>
-
-</html>
